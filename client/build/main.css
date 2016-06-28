@@ -2,6 +2,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+/*MAIN DIV*/
 .main {
 	margin: 20vh 20vh;
 	background-color: #b0e1d8;
@@ -31,4 +32,27 @@ h4 {
 	background-color: #eaf9f8;
 	box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
 	font-size: 1em;
+}
+
+/*DISPLAY COUNTRY INFO DIV*/
+.display-country-info {
+	margin: 5vh 25vh;
+	height: auto;
+	width: auto;
+	color: #88b7b8;
+	border: 1px solid #88b7b8;
+	background-color: #eaf9f8;
+	border-radius: 15px;
+	box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2)
+}
+
+.display-country-info h3 {
+	color: #88b7b8;
+	text-align: center;
+}
+
+.display-country-info ul {
+	padding-left: 0px;
+	text-align: center;
+	list-style-type: none;
 }
