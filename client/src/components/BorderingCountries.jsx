@@ -2,8 +2,13 @@ var React = require('react');
 
 var BorderingCountries = React.createClass({
 	render: function() {
-		var countryItems = this.props.borders.map(function(border) {
-			return <p key={border}> border </p>
+		var borderItems = this.props.borders.map(function(border) {
+			return(
+				<div key={border.alpha3Code}>
+					<h4> {border.name} </h4>
+					{border.population}
+				</div>
+			)
 		})
 		return(
 			<div>

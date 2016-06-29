@@ -14,7 +14,7 @@ var CountryDisplay = React.createClass({
 					<li className="country-info">Population: {this.props.country.population}</li>
 				</ul>
 				<BorderingCountries
-					borders={this.props.country.borders}
+					borders={this.props.borderingCountries}
 				/>
 			</div>
 		)
