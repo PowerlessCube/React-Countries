@@ -7,7 +7,7 @@ var CountryDisplay = React.createClass({
 		// 	displayBorderElement
 		// }
 
-		var listItems = this.props.country.borders.map( function(country, index) {
+		var listItems = this.props.borders.map( function(country, index) {
 			return <li key={index}> {country} </li>
 		});
 
