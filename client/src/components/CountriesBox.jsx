@@ -12,7 +12,6 @@ var CountriesBox = React.createClass({
 		this.setState({ displayCountry: country });
 	},
 
-	//This is a function that React calls for us - this is how we hook up information for our APIs
 	componentDidMount: function() {
 		console.log('CDM was called');
 		var url = "https://restcountries.eu/rest/v1/all";
@@ -25,23 +24,23 @@ var CountriesBox = React.createClass({
 		request.send();
 	},
 
-	getBorderNames: function(){
-		return ["Scotland", "Wales"]
-		// TODO: go get country display borders
-		// TODO: for each of those codes go and find the country in my country lists and get it's name. add the name to a new array and then return the matching country.
+	getBorderingCountries: function() {
+		var borderingCountries = this.state.displayCountry.borders.map(function(border) {
+			// TODO: find the country that has the same alpha 3 code as the border.
+			return this.state.countries.find(function(country) {
+				return country.alpha3Code === border
+			})
+		}.bind(this))
+		return borderingCountries;
 	},
 
 	render: function() {
 		var displayElement = <h4> No Country Selected </h4>
 		if (this.state.displayCountry) {
-			//when selected it passes the selected country to Countries Display
-
-			var borders = this.getBorderNames();
-			console.log(borders)
 			displayElement =
 			<CountryDisplay
 				country={this.state.displayCountry}
-				borders={borders}
+				borderingCountries={this.getBorderingCountries()}
 			/>
 		}
 		return(
